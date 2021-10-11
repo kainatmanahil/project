@@ -1,0 +1,54 @@
+{% extends "master_template_student.html" %}
+
+{% block body%}
+
+
+<div class="limiter">
+<div class="container-table100">
+<div class="wrap-table100">
+<div class="table100 ver1 m-b-110">
+<div class="table100-head">
+<table >
+<thead>
+<tr>
+
+<th style="text-indent:10px;">Teacher Name</th>
+<th style="text-indent: -20%;">Assignment Name</th>
+<th style="text-indent: -60%;">Deadline</th>
+<th style="text-indent: -50%;">Subject</th>
+<th style="text-indent: -30%;">Number</th>
+
+<th>Upload file in pdf</th>
+
+</tr>
+</thead>
+</table>
+</div>
+<div class="table">
+<table>
+<tbody>
+	{%for detail in openn  %}
+<tr 	 >
+<td style="text-align: right;">{{detail.teacher}}</td>
+<td style="text-indent: 40%;">{{detail.topic}}</td>
+<td style="text-indent: 450%;">{{detail.course}}</td>
+<td style="text-indent: 1200%;">{{detail.number}}</td>
+<td >{{detail.deadline}}</td>
+
+<td > 
+	<form method="POST" action="/savedata/{{st.id}}" enctype=multipart/form-data>
+<input type="file" name = file class="form-control"  style="text-indent: 60%;">
+</td>
+	<td>
+	<button  type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+</td>
+	</form>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+
+
+{% endblock body %}

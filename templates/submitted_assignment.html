@@ -1,0 +1,52 @@
+{% extends "master_template.html" %}
+
+{% block body%}
+
+
+<div class="limiter">
+<div class="container-table100">
+<div class="wrap-table100">
+<div class="table100 ver1 m-b-110">
+<div class="table100-head">
+<table >
+<thead>
+<tr>
+
+<th style="text-indent:10%;">Student Name</th>
+<th >Session</th>
+<th >Program</th>
+<th >Assignment Name</th>
+<th style="text-indent: -120%;">Marks</th>
+
+
+
+</tr>
+</thead>
+</table>
+</div>
+<div class="table">
+<table>
+<tbody>
+    {%for stud in st  %}
+<form method="post" action="/submitted_assignment/{{stud.student_id}}">
+	
+<tr >
+<td style="text-indent: 30%;">{{stud.student_id}}</td>
+<td style="text-indent: 65%;">{{stud.session}}</td>
+<td style="text-indent: 60%;">{{stud.program}}</td>
+<td style="text-indent: 100%;">{{stud.assignment_name}}</td>
+<td ><input type="text" value="{{stud.obtain_marks}}" name = "marks" size="5%" style="position: relative; left:250px; "> </td>
+    
+<td style="text-indent: 60%;">
+ <button  type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+</td>
+	</form>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+
+
+{% endblock body %}

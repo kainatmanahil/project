@@ -1,0 +1,54 @@
+{% extends "master_template_student.html" %}
+
+{% block body%}
+
+
+<div class="limiter">
+<div class="container-table100">
+<div class="wrap-table100">
+<div class="table100 ver1 m-b-110">
+<div class="table100-head">
+<table >
+<thead>
+<tr>
+
+<th style="text-indent:10px;">Teacher Name</th>
+<th style="text-indent: -20%;">Assignment Name</th>
+<th style="text-indent: -60%;">Deadline</th>
+<th style="text-indent: -50%;">Subject</th>
+<th style="text-indent: -30%;">Number</th>
+<th style="text-indent: -30%;">Obatin Marks</th>
+
+
+</tr>
+</thead>
+</table>
+</div>
+<div class="table">
+<table>
+<tbody>
+	{%for detail in openn  %}
+<tr >
+<td style="text-indent:10px;">{{detail.teacher}}</td>
+<td style="text-indent: -5%;">{{detail.topic}}</td>
+<td style="text-indent: -115%;">{{detail.deadline}}</td>
+<td style="text-indent: -300%;">{{detail.course}}</td>
+<td style="text-indent: -600%;">{{detail.number}}</td>
+
+
+{% endfor %}
+
+<td style="text-indent: -800%;"> 
+	 {{rs.obtain_marks}}
+</td>
+
+	
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+
+{% endblock body %}
